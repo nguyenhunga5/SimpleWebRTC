@@ -9,31 +9,31 @@ function SimpleWebRTC(opts) {
     var self = this;
     var options = opts || {};
     var config = this.config = {
-            url: 'https://sandbox.simplewebrtc.com:443/',
-            socketio: {/* 'force new connection':true*/},
-            connection: null,
-            debug: false,
-            localVideoEl: '',
-            remoteVideosEl: '',
-            enableDataChannels: true,
-            autoRequestMedia: false,
-            autoRemoveVideos: true,
-            adjustPeerVolume: false,
-            peerVolumeWhenSpeaking: 0.25,
-            media: {
-                video: true,
-                audio: true
-            },
-            receiveMedia: {
-                offerToReceiveAudio: 1,
-                offerToReceiveVideo: 1
-            },
-            localVideo: {
-                autoplay: true,
-                mirror: true,
-                muted: true
-            }
-        };
+        url: 'https://144.217.93.17:8888/',
+        socketio: {/* 'force new connection':true*/ },
+        connection: null,
+        debug: false,
+        localVideoEl: '',
+        remoteVideosEl: '',
+        enableDataChannels: true,
+        autoRequestMedia: false,
+        autoRemoveVideos: true,
+        adjustPeerVolume: false,
+        peerVolumeWhenSpeaking: 0.25,
+        media: {
+            video: true,
+            audio: true
+        },
+        receiveMedia: {
+            offerToReceiveAudio: 1,
+            offerToReceiveVideo: 1
+        },
+        localVideo: {
+            autoplay: true,
+            mirror: true,
+            muted: true
+        }
+    };
     var item, connection;
 
     // We also allow a 'logger' option. It can be any object that implements
@@ -47,8 +47,8 @@ function SimpleWebRTC(opts) {
         if (opts.debug) {
             return opts.logger || console;
         } else {
-        // or we'll use your logger which should have its own logic
-        // for output. Or we'll return the no-op.
+            // or we'll use your logger which should have its own logic
+            // for output. Or we'll return the no-op.
             return opts.logger || mockconsole;
         }
     }();
@@ -181,16 +181,16 @@ function SimpleWebRTC(opts) {
 
     // sending mute/unmute to all peers
     this.webrtc.on('audioOn', function () {
-        self.webrtc.sendToAll('unmute', {name: 'audio'});
+        self.webrtc.sendToAll('unmute', { name: 'audio' });
     });
     this.webrtc.on('audioOff', function () {
-        self.webrtc.sendToAll('mute', {name: 'audio'});
+        self.webrtc.sendToAll('mute', { name: 'audio' });
     });
     this.webrtc.on('videoOn', function () {
-        self.webrtc.sendToAll('unmute', {name: 'video'});
+        self.webrtc.sendToAll('unmute', { name: 'video' });
     });
     this.webrtc.on('videoOff', function () {
-        self.webrtc.sendToAll('mute', {name: 'video'});
+        self.webrtc.sendToAll('mute', { name: 'video' });
     });
 
     // screensharing events
@@ -296,10 +296,10 @@ SimpleWebRTC.prototype.handlePeerStreamAdded = function (peer) {
     // the async setRemoteDescription-createAnswer)
     window.setTimeout(function () {
         if (!self.webrtc.isAudioEnabled()) {
-            peer.send('mute', {name: 'audio'});
+            peer.send('mute', { name: 'audio' });
         }
         if (!self.webrtc.isVideoEnabled()) {
-            peer.send('mute', {name: 'video'});
+            peer.send('mute', { name: 'video' });
         }
     }, 250);
 };
