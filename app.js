@@ -14,7 +14,9 @@ app.use(express.static(__dirname + '/out'));
 var server = https.createServer(options, app);
 
 const io = require('socket.io').listen(server);
-server.listen(8089);
+server.listen(8089, function () {
+    console.log('Listening on localhost:8089');
+});
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/test/index.html');
