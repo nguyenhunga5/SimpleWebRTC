@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/out'));
 var server = https.createServer(options, app);
 
 const io = require('socket.io').listen(server);
-server.listen(8080);
+server.listen(8089);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/test/index.html');
