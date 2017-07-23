@@ -10,9 +10,10 @@ const options = {
 };
 
 var app = express();
+var server = https.createServer(options, app);
+
 app.use(__dirname + '/out');
 
-var server = https.createServer(options, app);
 const io = require('socket.io').listen(server);
 server.listen(8080);
 
