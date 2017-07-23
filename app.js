@@ -21,3 +21,15 @@ server.listen(8089, function () {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/test/index.html');
 })
+
+io.on('connection', function (socket) {
+
+    console.log('Client connected: ', socket);
+
+});
+
+io.on('disconnect', function (socket) {
+
+    console.log('Client disconnected: ', socket);
+
+});
