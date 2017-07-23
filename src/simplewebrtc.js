@@ -9,7 +9,7 @@ function SimpleWebRTC(opts) {
     var self = this;
     var options = opts || {};
     var config = this.config = {
-        url: 'https://144.217.93.17:8888/',
+        url: 'https://nguyenhunga5.ddns.net:8888/',
         socketio: {/* 'force new connection':true*/ },
         connection: null,
         debug: false,

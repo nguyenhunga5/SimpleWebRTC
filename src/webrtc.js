@@ -11,7 +11,7 @@ function WebRTC(opts) {
         debug: false,
         // makes the entire PC config overridable
         peerConnectionConfig: {
-            iceServers: [{ 'urls': '144.217.93.17:3478' }]
+            iceServers: [{ 'urls': 'nguyenhunga5.ddns.net:3478' }]
         },
         peerConnectionConstraints: {
             optional: []
