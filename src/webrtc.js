@@ -8,7 +8,7 @@ function WebRTC(opts) {
     var self = this;
     var options = opts || {};
     var config = this.config = {
-        debug: false,
+        debug: true,
         // makes the entire PC config overridable
         peerConnectionConfig: {
             iceServers: [{ 'urls': 'nguyenhunga5.ddns.net:3478' }]
