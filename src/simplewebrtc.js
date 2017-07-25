@@ -12,7 +12,7 @@ function SimpleWebRTC(opts) {
         url: 'https://nguyenhunga5.ddns.net:8888/',
         socketio: {/* 'force new connection':true*/ },
         connection: null,
-        debug: false,
+        debug: true,
         localVideoEl: '',
         remoteVideosEl: '',
         enableDataChannels: true,
