@@ -12,7 +12,7 @@ function WebRTC(opts) {
         // makes the entire PC config overridable
         peerConnectionConfig: {
             iceServers: [{
-                'urls': 'stun:nguyenhunga5.ddns.net:3478?transport=udp',
+                'urls': 'stun:144.217.93.17:3478?transport=udp',
                 // "username": "restund",
                 // "secret": "secretpassword",
                 "expiry": 86400
